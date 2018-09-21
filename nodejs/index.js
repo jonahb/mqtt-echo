@@ -3,7 +3,7 @@ const readline = require("readline");
 
 const topic = "moey";
 const topicEcho = "moey_echo";
-const mqttBrokerUrl = "mqtt://test.mosquitto.org:1883";
+const mqttBrokerUrl = "mqtt://test.mosquitto.org";
 
 const mqttClient  = mqtt.connect(mqttBrokerUrl);
 

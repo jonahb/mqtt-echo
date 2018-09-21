@@ -68,7 +68,7 @@ local broker:
    Broker Host" to `localhost`. Restart the scene.
 
 4. In `nodejs/index.js`, change the value of `mqttBrokerUrl` to
-   `mqtt://localhost:1883`. Restart the client.
+   `mqtt://localhost`. Restart the client.
 
 Now the components will communicate via the local broker. To test the local
 broker with the mosquitto command-line tools, change the value of the `-h`
