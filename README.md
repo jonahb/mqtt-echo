@@ -27,13 +27,13 @@ mosquitto_pub -h test.mosquitto.org -t moey -m '{"message": "hiya"}'
 
 Note that "hiya" appears in the Table DAT in TouchDesigner.
 
-## Client
+## Client (Node.js)
 
 The JavaScript client sends messages to the echo server via MQTT and displays
 the echo responses. To run, ensure you have Node.js installed, then:
 
 ```
-cd mqtt-client
+cd nodejs
 npm install
 node index.js
 ```
@@ -52,7 +52,7 @@ local broker:
    DAT to `tcp://localhost:1883`. Change the "Active" parameter to "Off" and
    back to "On".
 
-3. In `mqtt-client/index.js`, change the value of `mqttBrokerUrl` to
+3. In `nodejs/index.js`, change the value of `mqttBrokerUrl` to
    `mqtt://localhost:1883`. Restart the client.
 
 Now the client and server will communicate via the local broker. To test the
