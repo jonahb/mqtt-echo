@@ -3,7 +3,8 @@
 This directory contains:
 
 1. TouchDesigner MQTT echo server
-2. Node.js MQTT client
+2. Unity MQTT echo server
+3. Node.js MQTT client
 
 ## Setup
 
@@ -27,6 +28,16 @@ mosquitto_pub -h test.mosquitto.org -t moey -m '{"message": "hiya"}'
 
 Note that "hiya" appears in the Table DAT in TouchDesigner.
 
+## Echo Server (Unity)
+
+Open the `unity` folder in Unity. Press play. On the command line, run:
+
+```
+mosquitto_pub -h test.mosquitto.org -t moey -m '{"message": "hiya"}'
+```
+
+Note that "hiya" appears on the Unity console.
+
 ## Client (Node.js)
 
 The JavaScript client sends messages to the echo server via MQTT and displays
@@ -38,8 +49,9 @@ npm install
 node index.js
 ```
 
-Type a message and press "return." The message is displayed in TouchDesigner.
-TouchDesigner echoes the message, and the echo is printed to the console.
+Type a message and press "return." The message is displayed in TouchDesigner
+and/or Unity.  TouchDesigner and/or Unity echo the message, and the echoes are
+printed on the console.
 
 ## Local MQTT Broker
 
@@ -52,9 +64,12 @@ local broker:
    DAT to `tcp://localhost:1883`. Change the "Active" parameter to "Off" and
    back to "On".
 
-3. In `nodejs/index.js`, change the value of `mqttBrokerUrl` to
+3. In Unity, inspect the object named `EchoServer`. Change the property "MQTT
+   Broker Host" to `localhost`. Restart the scene.
+
+4. In `nodejs/index.js`, change the value of `mqttBrokerUrl` to
    `mqtt://localhost:1883`. Restart the client.
 
-Now the client and server will communicate via the local broker. To test the
-local broker with the mosquitto command-line tools, change the value of the
-`-h` option.
+Now the components will communicate via the local broker. To test the local
+broker with the mosquitto command-line tools, change the value of the `-h`
+option.
