@@ -14,10 +14,10 @@ receiving MQTT messages. Ensure you have Homebrew installed, then:
 brew install mosquitto
 ```
 
-## Echo Server
+## Echo Server (Touch Designer)
 
-Open `mqtt-echo.toe` in TouchDesigner. The MQTT Client Dat will connect to a
-test MQTT server on the Internet (test.mosquitto.org).
+Open `touch_designer/mqtt-echo.toe` in TouchDesigner. The MQTT Client Dat will
+connect to a test MQTT server on the Internet (test.mosquitto.org).
 
 On the command line, run:
 
