@@ -1,0 +1,12 @@
+{
+  "type": "start-mission",
+  "mission": 1,
+  "autoPlay": true,
+  "numberOfPlayers": 2,
+  "network": {
+    "bandwidth": 1,
+    "latency": 2,
+    "reliability": 3,
+    "security": 4
+  }
+}

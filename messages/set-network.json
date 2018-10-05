@@ -1,0 +1,9 @@
+{
+  "type": "set-network",
+  "network": {
+    "bandwidth": 1,
+    "latency": 2,
+    "reliability": 3,
+    "security": 4
+  }
+}
