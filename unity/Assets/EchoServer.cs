@@ -32,6 +32,10 @@ public class EchoServer : MonoBehaviour
         mqttClient.Subscribe(topics, qualityOfServiceLevels);
     }
 
+    private void OnDestroy() {
+        mqttClient.Disconnect();
+    }
+
     private void HandleClientMqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e) {
         JSONNode obj = JSON.Parse(Encoding.UTF8.GetString(e.Message));
         string message = obj["message"];
