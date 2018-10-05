@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 1845521560}
   - component: {fileID: 1845521559}
   m_Layer: 0
-  m_Name: EchoServer
+  m_Name: Messaging
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,11 +280,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1845521558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4141cc64fc2104339b1e7e8fd5ff68f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4806014200dba4318887c80f0e49dce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topic: moey
-  echoTopic: moey_echo
+  mqttTopic: moey
   mqttBrokerHost: test.mosquitto.org
 --- !u!4 &1845521560
 Transform:
