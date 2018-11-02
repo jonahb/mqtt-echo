@@ -30,7 +30,7 @@ public class Messaging : MonoBehaviour
         mqttClient.Connect(clientId);
 
         string[] topics = { mqttTopic };
-        byte[] qualityOfServiceLevels = { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE };
+        byte[] qualityOfServiceLevels = { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE };
         mqttClient.Subscribe(topics, qualityOfServiceLevels);
     }
 
@@ -117,7 +117,7 @@ public class Messaging : MonoBehaviour
 
     private void SendMessage(JSONNode json) {
         byte[] message = Encoding.UTF8.GetBytes(json.ToString());
-        mqttClient.Publish(mqttTopic, message);
+        mqttClient.Publish(mqttTopic, message, MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
     }
 
     private static Network ParseNetwork(JSONObject json) {
